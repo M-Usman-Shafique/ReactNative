@@ -1,0 +1,40 @@
+emulator -list-avds
+emulator -avd Devi
+
+package.json: app details & dependencies.
+package-lock.json: sub-details & sub-dependencies of dependencies.
+
+JSX: JavaScript Syntax Extension acc. to official documentation of React.
+
+Functions:
+1. 	Purpose: perform computations, reusable logic
+2. Returns any value (number, string, object, etc.)
+3. Cannot manage internal state in React
+4. Not reactive; cannot trigger re-renders
+Components:
+1. To render UI, manage state, handle lifecycle events
+2. Returns JSX
+3. Manage internal state using React Hooks (like useState)
+4. Reactive; changes in state or props trigger UI re-renders
+
+State: Can only be declared and used inside a component. To use in other components, we can pass it as props.
+Variables: Can be declared and used outside a function/component e.g. global variables.
+
+JS Expressions: code that directly returns a value. It can be written inside JSX.
+Exmp#1:
+<p>{2 + 3}</p>
+Exmp#2:
+let fname = "Usman"
+let lname = "Shafiq"
+<p>{fname+lname}</p>
+
+JS statements: code that performs an action but doesn't directly return a value. It cannot be written inside JSX.
+Exmp#1:
+<p>{let fname = "Usman"}</p>
+Exmp#2
+<div>{for (let x of arr) {
+    console.log(x);
+}}</div>
+
+forEach():
+map():
