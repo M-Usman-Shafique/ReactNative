@@ -1,5 +1,6 @@
 emulator -list-avds
 emulator -avd Devi
+Open metro builder: shift+R
 
 package.json: app details & dependencies.
 package-lock.json: sub-details & sub-dependencies of dependencies.
@@ -7,7 +8,7 @@ package-lock.json: sub-details & sub-dependencies of dependencies.
 JSX: JavaScript Syntax Extension acc. to official documentation of React.
 
 Functions:
-1. 	Purpose: perform computations, reusable logic
+1. Purpose: perform computations, reusable logic
 2. Returns any value (number, string, object, etc.)
 3. Cannot manage internal state in React
 4. Not reactive; cannot trigger re-renders

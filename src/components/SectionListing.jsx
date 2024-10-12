@@ -1,26 +1,9 @@
 import {View, Text, SectionList} from 'react-native';
 import React from 'react';
 import styles from '../stylesheets/styles';
+import { products } from '../utils/data';
 
 const SectionListing = () => {
-  const products = [
-    {
-      category: 'Fruits',
-      data: [
-        {id: 1, name: 'Apple'},
-        {id: 2, name: 'Mango'},
-        {id: 3, name: 'Orange'},
-      ],
-    },
-    {
-      category: 'Vegetables',
-      data: [
-        {id: 4, name: 'Carrot'},
-        {id: 5, name: 'Potato'},
-        {id: 6, name: 'Tomato'},
-      ],
-    },
-  ];
 
   const renderItem = ({item}) => (
     <View>

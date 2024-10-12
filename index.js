@@ -4,6 +4,6 @@
 
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import SectionListing from './src/components/SectionListing';
+import App from './App';
 
-AppRegistry.registerComponent(appName, () => SectionListing);
+AppRegistry.registerComponent(appName, () => App);

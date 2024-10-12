@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     borderRadius: 8,
   },
-  skill: {
+  username: {
     fontSize: 18,
   },
   cat: {
