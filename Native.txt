@@ -1,5 +1,7 @@
 emulator -list-avds
-emulator -avd Devi
+emulator -avd Devo
+adb devices
+adb -s Devi emu kill
 Open metro builder: shift+R
 
 package.json: app details & dependencies.
