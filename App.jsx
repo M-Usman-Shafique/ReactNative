@@ -1,34 +1,71 @@
-import {
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-} from 'react-native';
-import HorizScroll from './src/components/HorizScroll';
-import ActionCard from './src/components/ActionCard';
-import RowCards from './src/components/RowCards';
-import ContactList from './src/components/ContactList';
-import Grid from './src/images/gridy.jpg';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './src/screens/Login';
+import Home from './src/screens/Home';
+import About from './src/screens/About';
+import Header from './src/screens/Header';
+import {Alert, Button} from 'react-native';
+import Example from './src/screens/Example';
 
-const App = () => {
+const Stack = createNativeStackNavigator();
+
+const sayHello = () => Alert.alert('Hello, User');
+
+const HeaderTitle = () => (
+  <Button title="One" color="green" onPress={sayHello} />
+);
+
+const HeaderRight = () => <Example />;
+
+export default function App() {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'purple'}}>
-      <StatusBar
-        barStyle={'light-content'}
-        backgroundColor="rgba(0,0,0,0.01)"
-        hidden={false}
-        translucent={true}
-      />
-      <ScrollView>
-        <ImageBackground source={Grid} blurRadius={7} style={{flex: 1}}>
-          <RowCards />
-          <HorizScroll />
-          <ActionCard />
-          <ContactList />
-        </ImageBackground>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+      // screenOptions={{
+      //   headerStyle: {},
+      //   headerTitleStyle: {},
+      //   headerTintColor: {},
+      //   contentStyle: {},
+      // }}
+      >
+        <Stack.Screen
+          name="Header"
+          component={Header}
+          options={{
+            title: '',
+            headerTitle: HeaderTitle,
+            headerRight: HeaderRight,
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            title: 'Login Form',
+            headerStyle: {
+              backgroundColor: 'green',
+            },
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontSize: 20,
+              color: 'white',
+            },
+            contentStyle: {
+              backgroundColor: 'plum',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={About}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-
-export default App;
+}
