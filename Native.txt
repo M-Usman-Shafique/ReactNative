@@ -23,6 +23,15 @@ Components:
 State: Can only be declared and used inside a component. To use in other components, we can pass it as props.
 Variables: Can be declared and used outside a function/component e.g. global variables.
 
+Diff. b/w Context API and Redux Toolkit:
+Context API:
+1. Create, Provide, Use
+2. Can wrap only necessary components.
+Redux Toolkit:
+1. Action, Reducer, Store
+2. Wraps the entire application.
+
+
 JS Expressions: code that directly returns a value. It can be written inside JSX.
 Exmp#1:
 <p>{2 + 3}</p>
