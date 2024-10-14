@@ -1,52 +1,49 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 import {Text, View} from 'react-native';
-import {Button} from 'react-native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-const Drawer = createDrawerNavigator();
+const Tab = createMaterialTopTabNavigator();
 
-const Home = ({navigation}) => (
+const Chats = () => (
   <View>
-    <Text>Home</Text>
-    <Button title="Open Draw" onPress={() => navigation.openDrawer()} />
+    <Text>Chats</Text>
   </View>
 );
 
-const Profile = ({navigation}) => (
+const Status = () => (
   <View>
-    <Text>Profile</Text>
-    <Button title="Open Draw" onPress={() => navigation.openDrawer()} />
+    <Text>Status</Text>
   </View>
 );
 
-const Settings = ({navigation}) => (
+const Calls = () => (
   <View>
-    <Text>Settings</Text>
-    <Button title="Open Draw" onPress={() => navigation.openDrawer()} />
+    <Text>Calls</Text>
   </View>
 );
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
+      <Tab.Navigator
         screenOptions={{
-          drawerStyle: {
-            backgroundColor: 'plum',
-            width: 240,
+          tabBarActiveTintColor: 'blue',
+          tabBarInactiveTintColor: 'black',
+          tabBarStyle: {
+            backgroundColor: 'white',
           },
-          drawerLabelStyle: {
-            color: 'black',
+          tabBarIndicatorStyle: {
+            backgroundColor: 'blue',
+            height: 3,
+          },
+          tabBarLabelStyle: {
             fontSize: 18,
           },
-          // headerStyle: {},
-          // headerTintColor: {},
-          // headerTitleAlign: {},
         }}>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Profile" component={Profile} />
-        <Drawer.Screen name="Settings" component={Settings} />
-      </Drawer.Navigator>
+        <Tab.Screen name="Chats" component={Chats} />
+        <Tab.Screen name="Status" component={Status} />
+        <Tab.Screen name="Calls" component={Calls} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
