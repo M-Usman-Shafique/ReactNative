@@ -1,3 +1,7 @@
+CMD:
+npx react-native init PostGen
+npx react-native start --port 8084 --reset-cache
+
 emulator -list-avds
 emulator -avd Devo
 adb devices
